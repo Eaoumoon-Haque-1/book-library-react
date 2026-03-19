@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { getStoredBook } from "../../Utility/addToDB";
+import { clearStoredBooks, getStoredBook } from "../../Utility/addToDB";
+import { toast } from "react-toastify";
 
 const ReadList = () => {
   const [readList, setReadList] = useState([]);
@@ -43,16 +44,30 @@ const ReadList = () => {
         </TabList>
 
         <TabPanel>
-          <div className="flex justify-end mt-8 mb-6">
-            <select
-              value={sortType}
-              onChange={(e) => handleSort(e.target.value)}
-              className="bg-gray-900 text-white border border-cyan-500/20 rounded-xl px-4 py-3 outline-none"
-            >
-              <option value="">Filter Books By</option>
-              <option value="rating">Rating</option>
-              <option value="pages">Number of Pages</option>
-            </select>
+          <div className="flex flex-row-reverse gap-3">
+            <div className="flex justify-between items-center mt-8 mb-6">
+              <button
+                onClick={() => {
+                  clearStoredBooks();
+                  setReadList([]);
+                  toast("Read list cleared");
+                }}
+                className="text-sm px-4 py-2 rounded-lg border border-red-400 text-red-400 hover:bg-red-400 hover:text-black transition"
+              >
+                Clear List
+              </button>
+            </div>
+            <div className="flex justify-end mt-8 mb-6">
+              <select
+                value={sortType}
+                onChange={(e) => handleSort(e.target.value)}
+                className="bg-gray-900 text-white border border-cyan-500/20 rounded-xl px-4 py-3 outline-none"
+              >
+                <option value="">Filter Books By</option>
+                <option value="rating">Rating</option>
+                <option value="pages">Number of Pages</option>
+              </select>
+            </div>
           </div>
 
           {readList.length === 0 ? (
