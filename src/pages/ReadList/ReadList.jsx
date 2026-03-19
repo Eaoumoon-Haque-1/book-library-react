@@ -13,7 +13,7 @@ const ReadList = () => {
     const storedBookData = getStoredBook();
     const convertedStoredBooks = storedBookData.map((id) => parseInt(id));
     const myReadList = data.filter((book) =>
-      convertedStoredBooks.includes(book.bookId)
+      convertedStoredBooks.includes(book.bookId),
     );
     setReadList(myReadList);
   }, [data]);
@@ -134,7 +134,20 @@ const ReadList = () => {
         </TabPanel>
 
         <TabPanel>
-          <h2>Any content 2</h2>
+          <div className="flex flex-col items-center justify-center text-center mt-16 bg-gray-900 border border-cyan-500/10 rounded-2xl p-12 mb-20">
+            <h2 className="text-2xl font-semibold text-white mb-3">
+              Wishlist Coming Soon 🚧
+            </h2>
+
+            <p className="text-gray-400 max-w-md mb-6">
+              This section is currently under construction. We're working hard
+              to bring your wishlist feature soon. Stay tuned!
+            </p>
+
+            <span className="px-4 py-2 text-sm rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              Check back later
+            </span>
+          </div>
         </TabPanel>
       </Tabs>
     </div>

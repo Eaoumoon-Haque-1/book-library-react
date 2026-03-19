@@ -1,16 +1,95 @@
-# React + Vite
+📚 Book Library – React Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive book library application that allows users to explore books, view detailed information, and manage a personalized reading list using client-side storage.
 
-Currently, two official plugins are available:
+This project focuses on clean UI design, state management, and efficient data handling in a single-page application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🚀 Live Demo
+👉 
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🧠 Problem Statement
 
-## Expanding the ESLint configuration
+Managing personal reading lists digitally often lacks simplicity and performance in lightweight applications.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project solves that by:
+
+Providing a fast, client-side solution
+
+Avoiding unnecessary backend complexity
+
+Delivering a clean and intuitive user experience
+
+
+
+✨ Key Features
+
+📖 Book browsing with structured UI
+
+🔍 Detailed book view with full metadata
+
+✅ Persistent Read List using localStorage
+
+📊 Dynamic sorting:
+
+Rating (high → low)
+
+Pages (high → low)
+
+🎯 Active navigation highlighting (UX enhancement)
+
+⚡ Fully responsive dark-themed UI
+
+🚧 Wishlist module (planned for future extension)
+
+
+
+
+🛠️ Tech Stack
+
+Frontend: React.js
+
+Routing: React Router
+
+Styling: Tailwind CSS
+
+State Management: React Hooks (useState, useEffect)
+
+Storage: LocalStorage
+
+
+
+⚙️ Technical Highlights
+
+Efficient filtering using:
+
+data.filter(book => storedIds.includes(book.bookId))
+
+Dynamic UI rendering using .map()
+
+Controlled sorting without mutating original data
+
+Clean component-based architecture
+
+Route-based rendering with error handling (404 page)
+
+
+
+📂 Project Structure
+src/
+├── Components/
+├── Pages/
+├── Utility/
+└── Routes/
+
+
+
+🚧 Future Improvements
+
+Wishlist system with persistent storage
+
+Advanced filtering (category, tags)
+
+Backend integration (Node.js / Firebase)
+
+Authentication system

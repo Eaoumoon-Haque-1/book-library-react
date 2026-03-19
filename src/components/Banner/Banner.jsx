@@ -3,7 +3,7 @@ import bookImgLink from '../../assets/books.jpg'
 
 const Banner = () => {
     return (
-  <div className='flex justify-around items-center rounded-2xl bg-gradient-to-r from-gray-900 via-[#0f172a] to-black px-16 py-20 mt-[47px] mb-24 border border-cyan-500/10 shadow-xl'>
+  <div className='flex flex-col-reverse gap-5 md:flex-row justify-around items-center rounded-2xl bg-gradient-to-r from-gray-900 via-[#0f172a] to-black px-16 py-20 mt-[47px] mb-24 border border-cyan-500/10 shadow-xl'>
 
     {/* Left Content */}
     <div>

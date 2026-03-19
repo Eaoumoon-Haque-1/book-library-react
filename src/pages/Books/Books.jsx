@@ -4,12 +4,8 @@ import Book from "../Book/Book";
 
 
 const Books = ({ booksPromise }) => {
-//   const [allBooks, setAllBooks] = useState([]);
-
-  // const booksPromise = fetch('./booksData.json').then(res=>res.json());
-  // console.log(booksPromise);
   const data = use(booksPromise);
-  //   console.log(data);
+
   return (
     <div>
       <p className="font-bold text-4xl mt-11 md:mt-24 text-center text-amber-500">Books</p>
