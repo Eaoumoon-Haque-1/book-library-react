@@ -1,20 +1,61 @@
 import React from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
-  const links = (
-    <>
-      <Link to="/">
-        <li className="mr-4">Home</li>
-      </Link>
-      <Link to="/About">
-        <li className="mr-4">About</li>
-      </Link>
-      <Link to="/ReadList">
-        <li>Listed Books</li>
-      </Link>
-    </>
-  );
+
+const navLinkClass = ({ isActive }) =>
+  `relative px-1 py-2 text-sm font-medium transition-colors duration-300 ${
+    isActive ? "text-cyan-400" : "text-gray-300 hover:text-white"
+  }`;
+
+const links = (
+  <>
+    <li className="mr-3.5">
+      <NavLink to="/" end className={navLinkClass}>
+        {({ isActive }) => (
+          <span className="relative inline-block">
+            Home
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px] bg-cyan-400 transition-all duration-300 ${
+                isActive ? "w-full" : "w-0"
+              }`}
+            ></span>
+          </span>
+        )}
+      </NavLink>
+    </li>
+
+    <li className="mr-3.5">
+      <NavLink to="/About" className={navLinkClass}>
+        {({ isActive }) => (
+          <span className="relative inline-block">
+            About
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px] bg-cyan-400 transition-all duration-300 ${
+                isActive ? "w-full" : "w-0"
+              }`}
+            ></span>
+          </span>
+        )}
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink to="/ReadList" className={navLinkClass}>
+        {({ isActive }) => (
+          <span className="relative inline-block">
+            Listed Books
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px] bg-cyan-400 transition-all duration-300 ${
+                isActive ? "w-full" : "w-0"
+              }`}
+            ></span>
+          </span>
+        )}
+      </NavLink>
+    </li>
+  </>
+);
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
